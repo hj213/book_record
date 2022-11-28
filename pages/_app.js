@@ -5,7 +5,7 @@ export default function App({Component, pageProps}) {
 
     const [data, setData] = useState([]);
 
-    const dataId = useRef(0);
+    const dataId = useRef(1);
   
     const onCreate = (title, author, content, score) => {
       const created_date = new Date().getTime();
@@ -21,9 +21,14 @@ export default function App({Component, pageProps}) {
       setData([newItem, ...data]);
     }
 
+    const onDelete = (id) => {
+      const newList = data.filter((it) => it.id !== id);
+      setData(newList);
+    }
+
     return (
         <div>
-            <Component {...pageProps} onCreate={onCreate} list={data}/>
+            <Component {...pageProps} onCreate={onCreate} list={data} onDelete={onDelete}/>
         </div>
     )
 }

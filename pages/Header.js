@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { useRouter } from "next/router";
-import logo from '/img/logo.png';
+// import logo from '/img/logo.png';
 
 
 export default function Header(){
@@ -9,9 +9,8 @@ export default function Header(){
         <div>
                 <div className="logo">
                     <div>
-                        <Link href="/">
-                        {/* <img src="logo"></img> */}
-                        <a> 로고 이미지 </a>
+                        <Link href="/Write">
+                        <img src="/img/logo.png" width="90px"></img>
                         </Link>
                     </div>
 
@@ -22,7 +21,7 @@ export default function Header(){
                         <Link href="/Write">
                         <a> 기록하기 </a>
                         </Link>
-                        <Link href="/Write">
+                        <Link href="/Mypage">
                         <a> 마이페이지 </a>
                         </Link>
                     </div>
@@ -38,7 +37,8 @@ export default function Header(){
 
             .navigator {
                 
-                margin-left: 600px
+                margin-top: 20px;
+                margin-left: 680px
     
             }
             

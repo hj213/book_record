@@ -18,7 +18,18 @@ export default function Write({onCreate}){
 
     const submit = () => {
         onCreate(state.title, state.content, state.author, state.score);
+
+        setState({
+            title: '',
+            author: '',
+            content: '',
+            score:''
+        })
+
+
         alert("저장되었습니다!");
+
+        
     }
 
     return (
@@ -35,7 +46,7 @@ export default function Write({onCreate}){
             <div className="content" >기록하고 싶은 것</div>
             <textarea className="textarea" placeholder="기록하고 싶은 것을 입력하세요." maxLength="500" name='content' value={state.content} onChange={onChangeState}/>
 
-            <div className="score" >점수</div>
+            {/* <div className="score" >점수</div>
             <fieldset className="fieldset">
                 <div className="radio">
                 <input type="radio" className="reviewStar" value="5" id="rate1"/><label
@@ -49,7 +60,7 @@ export default function Write({onCreate}){
                 <input type="radio" className="reviewStar" value="1" id="rate5"/><label
                     for="rate5">★</label>
                 </div>
-            </fieldset>
+            </fieldset> */}
 
             <button className="save" onClick={submit}>기록하기</button>
 
@@ -58,7 +69,7 @@ export default function Write({onCreate}){
             <style jsx>{`
             h2{
                 margin-left: 180px;
-                margin-top: 100px;
+                margin-top: 80px;
             }
 
             .title{

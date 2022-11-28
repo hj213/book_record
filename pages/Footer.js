@@ -5,12 +5,13 @@ export default function Footer(){
 
             <style jsx>{`
             footer{
-                display: flex;
+                display: flex; 
                 align-items: flex-end;
                 justify-content: center;
                 color: #658a75;
                 margin-top: 30px;
                 margin-bottom: 60px;
+
             }
             `}</style>
 
